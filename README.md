@@ -1,8 +1,17 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Alto
+Alto is a simple and lightweight weather extension that utilizes the National Weather Service (NWS) API - **Currently only available in the U.S.**
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Features
+
+- No account needed
+- Accurate weather data obtained from the [National Weather Service](https://www.weather.gov/) (NWS)
+- Everything is stored on user's local computer - nothing is stored on the developer's side
+
+
+
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
