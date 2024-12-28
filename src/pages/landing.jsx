@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import Footer from "../components/footerItems"
 import '../styles/main.css'
 
 export default function App(){
@@ -13,6 +14,8 @@ export default function App(){
           <Link to="/options" className="links">Options</Link>
           <Link to="/about" className="links">About</Link>
         </div>
+
+        <Footer/>
       </div>
     )
   }
