@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import Footer from "../components/footerItems"
+import FooterItems from "../components/footerItems";
 import '../styles/main.css'
 
 export default function About(){
@@ -29,7 +29,7 @@ export default function About(){
                 </div>
             </div>
 
-           <Footer/>
+           <FooterItems/>
         </div>
     )
 }
