@@ -3,14 +3,15 @@ import axios from "axios";
 // this is to use Zippopotam.us | zip -> coordinate
 // Structure: api.zippopotam.us/country/postal-code
 export const getCoordinatesUsingZipcode = async (zipcode) => {
-    if (zipcode.length !== 5){
+    let regex = /[a-zA-Z]/
+    if (zipcode.length !== 5 || regex.test(zipcode)){
         console.error("Invalid zipcode")
         return null;
     }
     const ZIPPO_API_URL = `https://api.zippopotam.us/us/${zipcode}`
 
     try{
-        console.log("getting data for: ", ZIPPO_API_URL)
+        console.log("getting zipcode data for: ", ZIPPO_API_URL)
         const response = await axios.get(ZIPPO_API_URL);
         
         if (response.data && response.data.places.length > 0){
@@ -31,12 +32,12 @@ export const getCoordinatesUsingAddress = async (address) =>{
     const GEOCODER_API_URL = `https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=${encodeURIComponent(address)}&benchmark=4&format=json`
 
     try{
-        console.log("getting data for: ", GEOCODER_API_URL)
+        console.log("getting address data for: ", GEOCODER_API_URL)
         const response = await axios.get(GEOCODER_API_URL);
 
         if (response.data && response.data.result.addressMatches.length > 0){
             const coords = response.data.result.addressMatches[0].coordinates;
-            return {lat: coords.y, long: coords.x}
+            return {lat: (Math.trunc(coords.y * 10000) / 10000).toString(), long: (Math.trunc(coords.x * 10000) / 10000).toString()} // return only first 4 decimal places (NWS requirement)
         }else{
             console.error("No address matched.")
         }
