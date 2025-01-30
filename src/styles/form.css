@@ -1,0 +1,49 @@
+.address-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;   
+    
+}
+
+.city-state-container{
+    font-size: xx-small;
+    display: flex;
+    gap: 10px;
+    .city{
+        width: 70%;
+        height: 38px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .states{
+        width: 30%;
+        font-size: 12px;
+    }
+}
+
+.zipcode-container{
+    display: flex;
+    justify-content: center;
+    
+    .zip{
+        font-size: 12px;
+        text-align: center;
+        width: 35%;
+        height: 38px;
+        font-weight: 600;
+    }
+}
+
+button{
+    align-self: center;
+    width: 20%;
+    height: 24px;
+    background-color: #e8edee;
+    border-radius: 4px;
+}
+
+button:hover{
+    background-color: #d3d3d3;
+}
