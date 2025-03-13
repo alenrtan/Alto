@@ -1,8 +1,9 @@
 import React, {useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import FooterItems from "../components/FooterItems"
+import FooterItems from "../components/FooterItemsTempFix"
 import AddressForm from "../components/AddressForm"
 import '../styles/main.css'
+import { getCoordinatesUsingAddress, getCoordinatesUsingZipcode } from "../api/geocoding"
 
 export default function App() {
 
@@ -18,10 +19,32 @@ export default function App() {
     }, [])
 
     // locally storing user address
-    const handleAddressFormSubmit = (addressData) => {
-        localStorage.setItem("userAddress", JSON.stringify(addressData)) 
-        console.log("Address saved locally.", addressData);
-        setIsFirstTimeUser(false);
+    const handleAddressFormSubmit = async (addressData) => {
+
+        // begin checks; validate user input before calling NWS
+        let coords = null; // update this after finding
+
+        // logic: check addressData fields, if all are present (other than zip code as that's optional for thsis)
+        // use that to get coords,
+        // if no address is present, but just a zipcode (user used zipcode only form) get coords using zipcode
+        // tldr; address > zipcode
+        
+        if (addressData.street && addressData.city && addressData.state){
+            const address = `${addressData.street} ${addressData.city}, ${addressData.state}`
+            coords = await getCoordinatesUsingAddress(address);
+        }else if (addressData.zip){
+            coords = await getCoordinatesUsingZipcode(addressData.zip)
+        }else{
+            alert("Please enter a valid address or zipcode")
+        }
+
+        if(coords){
+            localStorage.setItem("userAddress", JSON.stringify(coords)) 
+            console.log("Address coordinates saved locally: ", coords);
+            setIsFirstTimeUser(false);
+            
+            // get weather data
+        }
     }
 
     // returning the actual page

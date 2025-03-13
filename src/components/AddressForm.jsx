@@ -83,7 +83,7 @@ const AddressForm = ({onSubmit}) => {
     const handleZipcodeSubmit = (e) => {
         e.preventDefault();
         if (onSubmit && addressData.zip.length === 5){
-            onSubmit(addressData.zip)
+            onSubmit({zip: addressData.zip})
         }else{
             alert("Please enter a valid 5-digit zipcode")
         }
@@ -135,8 +135,9 @@ const AddressForm = ({onSubmit}) => {
                     <input
                         className="zip"
                         type="text"
+                        pattern="[0-9]*"
                         name="zip"
-                        placeholder="Enter Zip Code"
+                        placeholder="Enter 5-Digit Zipcode"
                         value={addressData.zip}
                         onChange={handleChange}
                         required
