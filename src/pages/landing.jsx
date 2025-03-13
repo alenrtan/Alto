@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import FooterItems from "../components/FooterItemsTempFix"
+import FooterItems from "../components/FooterItems"
 import AddressForm from "../components/AddressForm"
 import '../styles/main.css'
 import { getCoordinatesUsingAddress, getCoordinatesUsingZipcode } from "../api/geocoding"
