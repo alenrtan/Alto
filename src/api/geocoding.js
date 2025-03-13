@@ -29,11 +29,11 @@ export const getCoordinatesUsingZipcode = async (zipcode) => {
 // US geocoder | address -> coordinate
 export const getCoordinatesUsingAddress = async (address) =>{
 
-    const GEOCODER_API_URL = `https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=${encodeURIComponent(address)}&benchmark=4&format=json`
+    const VERCEL_BACKEND_URL = "https://alto-iota.vercel.app/api/geocoding"
 
     try{
-        console.log("getting address data for: ", GEOCODER_API_URL)
-        const response = await axios.get(GEOCODER_API_URL);
+        console.log("getting address data for: ", VERCEL_BACKEND_URL)
+        const response = await axios.get(`${VERCEL_BACKEND_URL}?address=${address}`);
 
         if (response.data && response.data.result.addressMatches.length > 0){
             const coords = response.data.result.addressMatches[0].coordinates;
