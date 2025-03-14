@@ -33,11 +33,11 @@ export const getCoordinatesUsingAddress = async (address) =>{
 
     try{
         console.log("getting address data for: ", VERCEL_BACKEND_URL)
-        const response = await axios.get(`${VERCEL_BACKEND_URL}?address=${address}`);
+        const response = await axios.post(`${VERCEL_BACKEND_URL}?address=${address}`);
 
         if (response.data && response.data.result.addressMatches.length > 0){
             const coords = response.data.result.addressMatches[0].coordinates;
-            return {lat: (Math.trunc(coords.y * 10000) / 10000).toString(), long: (Math.trunc(coords.x * 10000) / 10000).toString()} // return only first 4 decimal places (NWS requirement)
+            return {lat: coords.y.toFixed(4), long: coords.x.toFixed(4)} // return only first 4 decimal places (NWS requirement)
         }else{
             console.error("No address matched.")
         }
