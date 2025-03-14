@@ -1,8 +1,15 @@
+// strictly for vercel
+
 import axios from "axios";
 
 export default async function handler(req, res){
-    const {address} = req.query;
-
+    // don't allow GET functions get it from the body
+    if (req.method === "GET"){
+        return res.status.json({error: "GET method not allowed"})
+    }
+    // change to req.body so address won't be stored in vercel logs
+    const {address} = req.body;
+    
     if (!address){
         return res.status(400).json({ error: "Missing address" });
     }
