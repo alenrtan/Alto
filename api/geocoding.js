@@ -5,7 +5,7 @@ import axios from "axios";
 export default async function handler(req, res){
     // don't allow GET functions get it from the body
     if (req.method === "GET"){
-        return res.status(405).json({error: "GET method not allowed"})
+        return res.status(405).json({error: "GET method not allowed. POST ONLY"})
     }
     // change to req.body so address won't be stored in vercel logs
     const {address} = req.body;

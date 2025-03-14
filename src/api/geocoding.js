@@ -33,7 +33,7 @@ export const getCoordinatesUsingAddress = async (address) =>{
 
     try{
         console.log("getting address data for: ", VERCEL_BACKEND_URL)
-        const response = await axios.post(`${VERCEL_BACKEND_URL}, {address}`);
+        const response = await axios.post(VERCEL_BACKEND_URL, {address});
 
         if (response.data && response.data.result.addressMatches.length > 0){
             const coords = response.data.result.addressMatches[0].coordinates;
