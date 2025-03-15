@@ -1,12 +1,19 @@
 {
     "manifest_version": 3,
     "name": "Alto",
+    "icons": {
+      "16": "alto_icon16.png",
+      "32": "alto_icon32.png",
+      "48": "alto_icon48.png",
+      "128": "alto_icon128.png"
+    },
     "version": "1.0.0",
     "description": "A weather Chrome extension - built using the NWS API",
     "action": {
       "default_popup": "index.html"
     },
     "permissions": [
-      "storage"
+      "storage",
+      "notifications"
     ]
   }
