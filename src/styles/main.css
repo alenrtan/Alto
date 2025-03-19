@@ -7,7 +7,7 @@
 :root {
 	font-family: Quicksand, system-ui, Inter, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
-	font-weight: 600;
+	font-weight: 500;
 	color: rgba(255, 255, 255, 0.87);
 	background-color: #242424;
 
@@ -17,7 +17,7 @@
 	/* REMOVE/COMMENT OUT BEFORE FINAL PRODUCT - FOR TESTING PURPOSES */
 	border: #468080;
 	border-style: dashed;
-	border-radius: 12px;
+	/* border-radius: 12px; */
 }
 
 * {
@@ -88,11 +88,15 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
+	font-weight: 400;
+	
 	button{
-		width: 110%;
+		font-weight: 800;
+		color: red;
+		border-radius: 8px !important; 
 	}
 }
+
 
 
 /* 
