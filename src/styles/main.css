@@ -1,118 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 * {
-  font-family: Quicksand, sans-serif !important;
+	font-family: Quicksand, sans-serif !important;
 }
 
 :root {
-    font-family: Quicksand, system-ui, Inter, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+	font-family: Quicksand, system-ui, Inter, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
 
-    height: 600px;
-    width: 375px;
+	height: 600px;
+	width: 375px;
 
-    /* REMOVE/COMMENT OUT BEFORE FINAL PRODUCT - FOR TESTING PURPOSES */
-    border: #468080;
-    border-style: dashed;
-    border-radius: 12px;
+	/* REMOVE/COMMENT OUT BEFORE FINAL PRODUCT - FOR TESTING PURPOSES */
+	border: #468080;
+	border-style: dashed;
+	/* border-radius: 12px; */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-footer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: rgb(175, 175, 175);;
-  margin: 2px;
-  font-size: x-small;
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: rgb(175, 175, 175);
+	;
+	margin: 2px;
+	font-size: x-small;
 
-  .right-foot{
-    text-align: end;
-    color: white
-  }  
+	.right-foot {
+		text-align: end;
+		color: white
+	}
 }
 
-.main-container{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.main-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
-.header-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 12px;
-    font-size: 36px;
+.header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 12px;
+	font-size: 36px;
 }
 
-.subheader-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.subheader-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
-.links{
-  text-decoration: none;
-  color: rgb(175, 175, 175);
-  padding: 12px;
+.links {
+	text-decoration: none;
+	color: rgb(175, 175, 175);
+	padding: 12px;
 }
 
-.text-container{
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    
-    .header-container{
-        font-size: 24px;
-        color: rgb(224, 238, 145);
-        text-decoration: underline wavy 2px;
-        text-underline-offset: 5px;
-    }
+.text-container {
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+
+	.header-container {
+		font-size: 24px;
+		color: rgb(224, 238, 145);
+		text-decoration: underline wavy 2px;
+		text-underline-offset: 5px;
+	}
 }
+
+.content-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 400;
+	
+	button{
+		font-weight: 800;
+		color: red;
+		border-radius: 8px !important; 
+	}
+}
+
 
 
 /* 
     obtained from https://www.cssportal.com/css-scrollbar-generator/ 
 */
 *::-webkit-scrollbar {
-    height: 5px;
-    width: 5px;
-  }
-  *::-webkit-scrollbar-track {
-    border-radius: 2px;
-    background-color: #DFE9EB;
-  }
-  
-  *::-webkit-scrollbar-track:hover {
-    background-color: #B8C0C2;
-  }
-  
-  *::-webkit-scrollbar-track:active {
-    background-color: #B8C0C2;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: #A0A39B;
-  }
-  
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: #4E504B;
-  }
-  
-  *::-webkit-scrollbar-thumb:active {
-    background-color: #754C4C;
-  }
+	height: 5px;
+	width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: 2px;
+	background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+	background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+	background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #A0A39B;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #4E504B;
+}
+
+*::-webkit-scrollbar-thumb:active {
+	background-color: #754C4C;
+}
