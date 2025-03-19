@@ -3,6 +3,15 @@
 import axios from "axios";
 
 export default async function handler(req, res){
+    // Chrome extension CORS blockage fix
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS"){
+        return res.status(200).end();
+    }
+
     // don't allow GET functions get it from the body
     if (req.method === "GET"){
         return res.status(405).json({error: "GET method not allowed. POST ONLY"})
